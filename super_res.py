@@ -11,17 +11,15 @@ img = cv2.imread("nissan.jpg")
 path = "EDSR_x4.pb"
 sr.readModel(path)
 
-# # set the model and scale
-# sr.setModel("fsrcnn", 3)
-#
-# # upsample the image
-#
-# upscaled = sr.upsample(img)
-#
-# # save the upscaled image
-# cv2.imwrite('uncarroL.jpg', upscaled)
-
+# set the model and scale
 sr.setModel("edsr", 4)
+#
+# upsample the image
+
+upscaled = sr.upsample(img)
+
+# save the upscaled image
+cv2.imwrite('uncarroL.jpg', upscaled)
 
 result = sr.upsample(img)
 
